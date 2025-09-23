@@ -17,7 +17,7 @@ public class PersonService {
         return person.toString() + "\n";
     }
 
-    public String get(long id) {
+    public String getPerson(long id) {
         return persons
                 .stream()
                 .filter(person -> person.getId() == id)

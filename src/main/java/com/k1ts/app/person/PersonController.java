@@ -25,6 +25,6 @@ public class PersonController {
 
     @GetMapping("/get")
     public String getPerson(@RequestParam(name = "id") long id) {
-        return personService.get(id);
+        return personService.getPerson(id);
     }
 }
