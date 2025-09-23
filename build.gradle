@@ -1,18 +1,19 @@
 plugins {
     id 'groovy'
     id 'java'
+    id 'org.springframework.boot' version '2.7.18'
 }
 
 group 'com.k1ts.app'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation("org.springframework.boot:spring-boot-starter-web:2.7.18")
+    testImplementation(group: 'junit', name: 'junit', version: '4.12')
 }
