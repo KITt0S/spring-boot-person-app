@@ -1,0 +1,41 @@
+# Компилированные классы
+*.class
+
+# Логи
+*.log
+
+# Пакеты и архивы
+*.jar
+*.war
+*.ear
+
+# Конфиги IDE
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+build/
+
+# OS системные файлы
+.DS_Store
+Thumbs.db
