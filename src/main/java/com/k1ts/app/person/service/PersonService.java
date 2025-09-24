@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 @Service
 public class PersonService {
@@ -42,6 +43,21 @@ public class PersonService {
         person.setName(name);
         person.setAge(age);
 
-        return person.toString();
+        return person.toString() + "\n";
+    }
+
+    public String deletePerson(long id) {
+        Optional<Person> optionalPerson = persons
+                .stream()
+                .filter(person -> person.getId() == id)
+                .findFirst();
+
+        if (optionalPerson.isEmpty()) {
+            return "Person with id " + id + " is not found...\n";
+        }
+
+        persons.removeIf(person -> person.getId() == id);
+
+        return "Person with " + id + " is deleted successfully!\n";
     }
 }

@@ -35,4 +35,9 @@ public class PersonController {
             @RequestParam(name = "age") int age) {
         return personService.updatePerson(id, name, age);
     }
+
+    @DeleteMapping("/delete")
+    public String deletePerson(@RequestParam(name = "id") long id) {
+        return personService.deletePerson(id);
+    }
 }
