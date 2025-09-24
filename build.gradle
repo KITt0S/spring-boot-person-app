@@ -15,5 +15,9 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:2.7.18")
-    testImplementation(group: 'junit', name: 'junit', version: '4.12')
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.18")
+}
+
+test {
+    useJUnitPlatform()
 }
