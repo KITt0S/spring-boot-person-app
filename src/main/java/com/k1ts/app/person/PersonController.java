@@ -27,4 +27,12 @@ public class PersonController {
     public String getPerson(@RequestParam(name = "id") long id) {
         return personService.getPerson(id);
     }
+
+    @PostMapping("/update")
+    public String updatePerson(
+            @RequestParam(name = "id") long id,
+            @RequestParam(name = "name") String name,
+            @RequestParam(name = "age") int age) {
+        return personService.updatePerson(id, name, age);
+    }
 }
