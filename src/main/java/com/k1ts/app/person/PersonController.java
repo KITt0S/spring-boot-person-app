@@ -23,6 +23,11 @@ public class PersonController {
         return personService.addPerson(name, age);
     }
 
+    @GetMapping("/get")
+    public String getPerson(@RequestParam(name = "id") long id) {
+        return personService.getPerson(id);
+    }
+
     @PostMapping("/update")
     public String updatePerson(
     @RequestParam(name = "id") long id,
@@ -34,11 +39,6 @@ public class PersonController {
     @DeleteMapping("/delete")
     public String deletePerson(@RequestParam(name = "id") long id) {
         return personService.deletePerson(id);
-    }
-
-    @GetMapping("/get")
-    public String getPerson(@RequestParam(name = "id") long id) {
-        return personService.getPerson(id);
     }
 
     @GetMapping("/list")

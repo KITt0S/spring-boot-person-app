@@ -4,19 +4,16 @@ import java.util.Objects;
 
 public class Person {
 
-    private static long lastId;
-
     private final long id;
 
     private String name;
 
     private int age;
 
-    public Person(String name, int age) {
-        this.id = lastId;
+    public Person(long id, String name, int age) {
+        this.id = id;
         this.name = name;
         this.age = age;
-        lastId++;
     }
 
     public long getId() {

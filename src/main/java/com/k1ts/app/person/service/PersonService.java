@@ -6,15 +6,18 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 @Service
 public class PersonService {
 
+    private final AtomicLong idCounter = new AtomicLong();
+
     private final List<Person> persons = new ArrayList<>();
 
     public String addPerson(String name, int age) {
-        Person person = new Person(name, age);
+        Person person = new Person(idCounter.getAndIncrement(), name, age);
         persons.add(person);
         return person.toString() + "\n";
     }
@@ -58,7 +61,7 @@ public class PersonService {
 
         persons.removeIf(person -> person.getId() == id);
 
-        return "Person with " + id + " is deleted successfully!\n";
+        return "Person with id " + id + " is deleted successfully!\n";
     }
 
     public String listPersons() {
